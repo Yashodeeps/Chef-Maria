@@ -1,0 +1,33 @@
+{
+  "name": "chef-maria",
+  "version": "1.0.0",
+  "description": "A food delivery project using Swiggys API",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Yashodeep Nimbekar",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yashodeeps/Chef-Maria.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yashodeeps/Chef-Maria/issues"
+  },
+  "homepage": "https://github.com/Yashodeeps/Chef-Maria#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
