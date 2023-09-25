@@ -23,7 +23,7 @@ const Body =() =>{
       <div className="m-4 p-4">
         <input
             type="text"
-            className="border border-solid border-black"
+            className="border border-solid border-black rounded-l-full py-2 px-12"
             placeholder="Search"
             value={searchText}
             onChange={(e)=>{
@@ -31,7 +31,7 @@ const Body =() =>{
             }}
         />
         <button 
-            className="m-4 px-4 py-2 bg-green-600 rounded-full hover:bg-green-700 text-white"
+            className="m-4 ml-0 px-4 py-2 bg-green-600 rounded-r-full hover:bg-green-700 text-white shadow-md"
             onClick={()=> {
                 const data = filterData(searchText, allRestaurants)
                 setFilteredRestaurants(data)
