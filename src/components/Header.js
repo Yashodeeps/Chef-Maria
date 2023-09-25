@@ -5,7 +5,7 @@ import useOnline from "../utils/useOnline";
 
 const title = (
     <Link to={"/"}>
-    <img className="logo" alt="logo" src={Logo}>
+    <img className=" w-32 " alt="logo" src={Logo}>
         </img>
     </Link>
 
@@ -19,29 +19,29 @@ const Header =()=>{
     const isOnline = useOnline();
 
     return(
-        <div className="header-component">
+        <div className="flex justify-between bg-red-100 shadow-lg">
             {title}
-            <div className="nav-items">
-                <ul>
+            <div className="flex items-center">
+                <ul className="flex p-4 m-4">
                     <Link to={"/"}>
-                        <li>Home</li>
+                        <li className="px-4">Home</li>
                     </Link>
                     <Link to={"/about"}>
-                        <li>About</li>
+                        <li className="px-4">About</li>
                     </Link>
-                    <li>Contact</li>
-                    <li>Cart</li>
+                    <li className="px-4">Contact</li>
+                    <li className="px-4">Cart</li>
                     <Link to={"/instamart"}>
-                        <li>Instamart</li>
+                        <li className="px-4">Instamart</li>
                     </Link>
                 </ul>
             </div>
-            <h2>{isOnline ? ("🟢"): "🔴"}</h2>
             {isLoggedIn ? (
-                <button onClick={()=> setIsLoggedIn(false)}>Logout</button>
+                <button onClick={()=> setIsLoggedIn(false)} className="px-4">Logout</button>
             ) : (
-                <button onClick={()=> setIsLoggedIn(true)}>Login</button>
+                <button onClick={()=> setIsLoggedIn(true)} className="px-4">Login</button>
             )}
+            <h2 className="px-4 flex items-center">{isOnline ? ("🟢"): "🔴"}</h2>
         </div>
     )
 }
