@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { restaurantList } from "../constants";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useGetRestaurants from "../utils/useGetRestaurants";
+import userContext from "../utils/UserCOntext";
 
 
 
@@ -12,9 +13,11 @@ const Body =() =>{
     const[searchText, setSearchText] = useState("");
     const allRestaurants= useGetRestaurants();
     const filteredRestaurants= useGetRestaurants();
+    const{user, setUserName} = useContext(userContext);
 
 
     if(!allRestaurants) return null;
+
 
 
     return (filteredRestaurants?.length === 0)? (<Shimmer/>) : (
@@ -38,6 +41,15 @@ const Body =() =>{
             }}
 
         >Search</button>
+
+
+          <label>Enter to sync: </label>
+          <input
+            className="border border-solid border-black rounded-r-full py-2 px-12"
+            placeholder="Updating the Context"
+            value={user}
+            onChange={(e)=> setUserName(e.target.value)}
+        />
 
       </div>
 
